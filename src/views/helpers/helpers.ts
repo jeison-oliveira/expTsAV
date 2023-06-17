@@ -5,3 +5,9 @@ export function listaProfs(profs: Prof[]) {
   const lista = profs.map((p) => `<li>${p.nome} ${p.sala}</li>`).join('\n');
   return `<ul>${lista}</ul>`;
 }
+
+export function showErrors(errors: any[], path: string) {
+  if (!errors) return '';
+  const error = errors.find((e) => e.path == path);
+  return error ? error.message : '';
+}
