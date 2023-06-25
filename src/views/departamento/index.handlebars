@@ -22,10 +22,59 @@
           <tr class='table-dark'>
             <th scope='row'>{{name}}</th>
             <td>{{sigla}}</td>
-            <td></td>
+            <td>
+              <a href='/departamento/read/{{id}}' class='btn'>
+                <i class='fa-solid fa-eye text-primary'></i>
+              </a>
+              <a href='/departamento/update/{{id}}' class='btn'>
+                <i class='fa-solid fa-pen-to-square text-warning'></i>
+              </a>
+              <a class='btn'>
+                <i
+                  class='fa-solid fa-trash text-danger'
+                  id='button_modal_confirm'
+                  onclick='del(`{{id}}`, `{{name}}`)'
+                >
+                </i>
+              </a>
+            </td>
           </tr>
         {{/each}}
       </tbody>
     </table>
   </div>
+
+  <!-- modal element -->
+  <div id='modal_confirm' class='modal'>
+    <div class='modal-dialog modal-dialog-centered' role='document'>
+      <div class='modal-content'>
+        <div id='modal_confirm_header' class='modal-header'>
+          <h5 class='modal-title'>Confirme a exclusão</h5>
+          <button
+            type='button'
+            class='btn-close'
+            data-bs-dismiss='modal'
+            aria-label='Close'
+          >
+            <span aria-hidden='true'></span>
+          </button>
+        </div>
+        <div id='modal_confirm_body' class='modal-body'>
+          <p>Modal body text goes here.</p>
+        </div>
+        <div id='div_actions' class='modal-footer'>
+          <form id='form' method='post'>
+            <input type='hidden' name='_csrf' value='{{csrf}}' />
+            <input type='submit' class='btn btn-primary' value='Excluir' />
+          </form>
+          <button
+            type='button'
+            class='btn btn-secondary'
+            data-bs-dismiss='modal'
+          >Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

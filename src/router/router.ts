@@ -17,11 +17,9 @@ router.get('/logout', mainController.logout);
 
 // Departamento controller
 router.get('/departamento', checkAuth, departamentoController.index);
-router.get('/departamento', checkAuth, departamentoController.index);
-router.get('/departamento', checkAuth, departamentoController.index);
 router.get('/departamento/create', checkAuth, departamentoController.create);
 router.post('/departamento/create', checkAuth, departamentoController.create);
-router.get('/departamento/:id', checkAuth, departamentoController.read);
+router.get('/departamento/read/:id', checkAuth, departamentoController.read);
 router.get(
   '/departamento/update/:id',
   checkAuth,

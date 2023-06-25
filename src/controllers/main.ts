@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 
 const index = (req: Request, res: Response) => {
-  res.render('main/index');
+  res.render('main/index', { csrf: req.csrfToken() });
 };
 
 const about = (req: Request, res: Response) => {
