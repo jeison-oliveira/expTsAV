@@ -4,6 +4,7 @@ export interface MigracaoDB {
 
 const migracoes: Map<number, MigracaoDB> = new Map<number, MigracaoDB>();
 
+/*
 migracoes.set(1, {
   consultas: [
     {
@@ -21,5 +22,39 @@ migracoes.set(2, {
     },
   ],
 });
+*/
+
+migracoes.set(7, {
+  consultas: [
+    // {
+    //   model: 'Funcionarios',
+    //   query: `ALTER TABLE Funcionarios DROP COLUMN idade;`,
+    // },
+    // {
+    //   model: 'Funcionarios',
+    //   query: `ALTER TABLE Funcionarios DROP COLUMN fone;`,
+    // },
+    {
+      model: 'Funcionarios',
+      query: `ALTER TABLE Funcionarios ADD COLUMN senha char(100) not null AFTER name;`,
+    },
+  ],
+});
+// migracoes.set(6, {
+//   consultas: [
+//     // {
+//     //   model: 'Funcionarios',
+//     //   query: `ALTER TABLE Funcionarios DROP COLUMN idade;`,
+//     // },
+//     // {
+//     //   model: 'Funcionarios',
+//     //   query: `ALTER TABLE Funcionarios DROP COLUMN fone;`,
+//     // },
+//     {
+//       model: 'Funcionarios',
+//       query: `ALTER TABLE Funcionarios DROP COLUMN endereco;`,
+//     },
+//   ],
+// });
 
 export { migracoes };

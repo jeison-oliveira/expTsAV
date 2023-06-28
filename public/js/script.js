@@ -1,4 +1,15 @@
-let modalElement = document.getElementById('modal_confirm');
+const signupForm = document.getElementById('signup_form"');
+
+signupForm.onsubmit = () => {
+  const senha = documet.getElementById('senha').value;
+  const confSenha = documet.getElementById('conf_senha').value;
+  if(senha != confSenha) {
+    documet.getElementById('confirm-senha-error').innerTML('As senhas não coincidem.');
+    return false;
+  }
+}
+/*
+let modalElement = domElementId('modal_confirm');
 let btnModalConfirm = domElementId('button_modal_confirm');
 
 function del(id, descricao) {
@@ -39,9 +50,10 @@ modalElement.addEventListener('show.bs.modal', function (event) {
  console.log(action);
  });
  });
- */
 });
+
 
 function domElementId(id) {
   return document.getElementById(id);
 }
+*/

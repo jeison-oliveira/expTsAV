@@ -22,6 +22,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 const models = [VersaoDB, Funcionarios, Departamentos, Projetos, Dependentes];
 
+declare module 'express-session' {
+  interface SessionData {
+    uid: string;
+  }
+}
+
 export class Api {
   public server: express.Application;
   public publicPath: string;

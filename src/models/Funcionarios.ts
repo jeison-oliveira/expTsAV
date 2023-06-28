@@ -37,14 +37,20 @@ export class Funcionarios extends Model {
   @Column({
     type: DataType.STRING,
   })
-  endereco!: string;
-
+  senha!: string;
+  /*
   @AllowNull(false)
   @Column({
     type: DataType.STRING,
   })
-  fone!: string;
+  endereco!: string;
 
+  // @AllowNull(false)
+  // @Column({
+  //   type: DataType.STRING,
+  // })
+  // fone!: string;
+*/
   @AllowNull(false)
   @Unique
   @IsEmail
@@ -53,11 +59,11 @@ export class Funcionarios extends Model {
   })
   email!: string;
 
-  @AllowNull(false)
-  @Column({
-    type: DataType.INTEGER,
-  })
-  idade!: number;
+  // @AllowNull(false)
+  // @Column({
+  //   type: DataType.INTEGER,
+  // })
+  // idade!: number;
 
   @ForeignKey(() => Departamentos)
   @AllowNull(false)
